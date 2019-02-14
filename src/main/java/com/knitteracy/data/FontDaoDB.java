@@ -41,7 +41,10 @@ public class FontDaoDB implements FontDao{
             final String SELECT_ALL = "SELECT * FROM font;";
             return jdbc.query(SELECT_ALL, new FontDaoDB.FontMapper());
         } catch (DataAccessException ex) {
-            throw ex;
+            System.out.println(ex);
+            System.err.println(ex);
+            //throw ex;
+            return null;
         }
     };
     
