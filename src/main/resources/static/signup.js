@@ -4,7 +4,7 @@ $('#submit-signup').click(function () {
     let data = {"username": username, "password": password};
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:8080/signup',
+        url: '/signup',
         contentType:'application/json',
         data: JSON.stringify(data),
         success: function (result) {

@@ -6,7 +6,7 @@ function loadSavedCharts() {
     let username = $('#username-value').val();
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:8080/api/user/' + username,
+        url: '/api/user/' + username,
         success: function (result) {
             console.log(result);
             $('#magnify-buttons').removeClass('hide');
@@ -34,7 +34,7 @@ function deleteChart(){
     console.log(chartId);
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:8080/api/deleteChart/' + chartId,
+        url: '/api/deleteChart/' + chartId,
         success: function (result) {
             loadSavedCharts();
         },

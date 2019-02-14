@@ -4,7 +4,7 @@ $('#submit-text').click(function () {
     let request = $('#text-input').val();
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:8080/api/words/' + request,
+        url: '/api/words/' + request,
         success: function (result) {
             $('#magnify-buttons').removeClass('hide');
             let grid = $('#word');
@@ -37,7 +37,7 @@ function saveChart(){
     console.log(data);
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:8080/api/saveChart',
+        url: '/api/saveChart',
         contentType:'application/x-www-form-urlencoded',
         data: data,
         success: function (result) {
