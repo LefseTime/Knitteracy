@@ -28,7 +28,7 @@ public class FontDaoDB implements FontDao{
     @Override
     public Font getFont(int fontId) {
         try {
-            final String SELECT_ONE = "SELECT * FROM font WHERE fontId = ?;";
+            final String SELECT_ONE = "SELECT * FROM Font WHERE fontId = ?;";
             return jdbc.queryForObject(SELECT_ONE, new FontMapper(), fontId);
         } catch (DataAccessException ex) {
             return null;
@@ -38,7 +38,7 @@ public class FontDaoDB implements FontDao{
     @Override
     public List<Font> getAllFonts(){
         try {
-            final String SELECT_ALL = "SELECT * FROM font;";
+            final String SELECT_ALL = "SELECT * FROM Font;";
             return jdbc.query(SELECT_ALL, new FontDaoDB.FontMapper());
         } catch (DataAccessException ex) {
             System.out.println(ex);

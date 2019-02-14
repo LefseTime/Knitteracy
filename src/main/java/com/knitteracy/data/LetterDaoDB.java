@@ -31,7 +31,7 @@ public class LetterDaoDB implements LetterDao {
     @Override
     public Letter getLetter(int fontId, char character) {
         try {
-            final String SELECT_ONE = "SELECT * FROM letter WHERE fontId = ? AND `character` = ?;";
+            final String SELECT_ONE = "SELECT * FROM Letter WHERE fontId = ? AND `character` = ?;";
             return jdbc.queryForObject(SELECT_ONE, new LetterMapper(), fontId, Character.toString(character));
         } catch (DataAccessException ex) {
             return null;

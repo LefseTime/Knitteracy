@@ -40,7 +40,7 @@ public class UserDaoDB implements UserDao {
             user.setUsername(username);
             user.setPassword(password);
 
-            final String ADD_ONE = "INSERT INTO user (username, password) VALUES (?,?);";
+            final String ADD_ONE = "INSERT INTO User (username, password) VALUES (?,?);";
             GeneratedKeyHolder keyHolder = new GeneratedKeyHolder();
             jdbc.update((Connection conn) -> {
 
@@ -68,7 +68,7 @@ public class UserDaoDB implements UserDao {
     @Override
     public User getUser(String username) {
         try {
-            final String SELECT_ONE = "SELECT * FROM user WHERE username = ?;";
+            final String SELECT_ONE = "SELECT * FROM User WHERE username = ?;";
             User user = jdbc.queryForObject(SELECT_ONE, new UserMapper(), username);
             try {
                 user.setSavedCharts(this.getSavedWordsByUser(username));
@@ -86,7 +86,7 @@ public class UserDaoDB implements UserDao {
     public List<User> getAllUsers() {
 
         try {
-            final String SELECT_ALL = "SELECT * FROM user;";
+            final String SELECT_ALL = "SELECT * FROM User;";
 
             List<User> users = jdbc.query(SELECT_ALL, new UserMapper());
             return users;
@@ -99,7 +99,7 @@ public class UserDaoDB implements UserDao {
     public boolean saveChart(int kerning, int spacing, String text, int fontId, String username) {
         try {
 
-            final String ADD_CHART = "INSERT INTO chart (kerning, spacing, text, fontId, username) VALUES (?,?,?,?,?);";
+            final String ADD_CHART = "INSERT INTO Chart (kerning, spacing, text, fontId, username) VALUES (?,?,?,?,?);";
             GeneratedKeyHolder keyHolder = new GeneratedKeyHolder();
             jdbc.update((Connection conn) -> {
 
@@ -128,7 +128,7 @@ public class UserDaoDB implements UserDao {
     public boolean deleteChart(int chartId) {
         try {
 
-            final String DELETE_CHART = "DELETE FROM chart WHERE chartId = ?;";
+            final String DELETE_CHART = "DELETE FROM Chart WHERE chartId = ?;";
             jdbc.update(DELETE_CHART, chartId);
             return true;
         } catch (DataAccessException ex) {
@@ -140,8 +140,8 @@ public class UserDaoDB implements UserDao {
     @Override
     public List<Word> getSavedWordsByUser(String username) {
         try {
-            final String SELECT_ALL = "SELECT * FROM chart "
-                    + "JOIN font ON chart.fontId = font.fontId "
+            final String SELECT_ALL = "SELECT * FROM Chart "
+                    + "JOIN Font ON Chart.fontId = Font.fontId "
                     + "WHERE username = ?;";
             List<Word> words = jdbc.query(SELECT_ALL, new WordMapper(), username);
             return words;
