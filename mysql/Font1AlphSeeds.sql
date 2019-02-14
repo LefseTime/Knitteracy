@@ -1,4 +1,3 @@
-use KnittingChart;
 
 insert into Letter (`character`, width, fontId, coordinates)
 	values ('A',4,1,

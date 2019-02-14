@@ -12,13 +12,13 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- Schema KnittingChart
 -- -----------------------------------------------------
 
-CREATE SCHEMA IF NOT EXISTS `KnittingChart` DEFAULT CHARACTER SET utf8 ;
-USE `KnittingChart` ;
+-- CREATE SCHEMA IF NOT EXISTS `yw4ml2tgjch6nqh0` DEFAULT CHARACTER SET utf8 ;
+USE `yw4ml2tgjch6nqh0t` ;
 
 -- -----------------------------------------------------
 -- Table `KnittingChart`.`Font`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `KnittingChart`.`Font` (
+CREATE TABLE IF NOT EXISTS `Font` (
   `fontId` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL,
   `height` INT NOT NULL,
@@ -32,7 +32,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `KnittingChart`.`Letter`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `KnittingChart`.`Letter` (
+CREATE TABLE IF NOT EXISTS `Letter` (
   `letterId` INT NOT NULL AUTO_INCREMENT,
   `character` CHAR(1) NOT NULL,
   `width` INT NOT NULL,
@@ -43,16 +43,16 @@ CREATE TABLE IF NOT EXISTS `KnittingChart`.`Letter` (
   INDEX `fk_fontId_idx` (`fontId` ASC),
   CONSTRAINT `fontId`
     FOREIGN KEY (`fontId`)
-    REFERENCES `KnittingChart`.`Font` (`fontId`)
+    REFERENCES `Font` (`fontId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-use KnittingChart;
+-- use KnittingChart;
 -- -----------------------------------------------------
 -- Table `KnittingChart`.`User`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `KnittingChart`.`User` (
+CREATE TABLE IF NOT EXISTS `User` (
   `userId` INT NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(45) NOT NULL,
   `password` TEXT NOT NULL,
@@ -65,7 +65,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `KnittingChart`.`Chart`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `KnittingChart`.`Chart` (
+CREATE TABLE IF NOT EXISTS `Chart` (
   `chartId` INT NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(45) NOT NULL,
   `fontId` INT NOT NULL,
@@ -78,11 +78,11 @@ CREATE TABLE IF NOT EXISTS `KnittingChart`.`Chart` (
   INDEX `fontId_idx` (`fontId` ASC),
   CONSTRAINT `username`
     FOREIGN KEY (`username`)
-    REFERENCES `KnittingChart`.`User` (`username`)
+    REFERENCES `User` (`username`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
     FOREIGN KEY (`fontId`)
-    REFERENCES `KnittingChart`.`Font` (`fontId`)
+    REFERENCES `Font` (`fontId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

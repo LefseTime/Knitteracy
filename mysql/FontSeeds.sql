@@ -16,10 +16,10 @@ insert into Font (name, height, description, sourceName, sourceUrl)
 insert into Font (name, height, description, sourceName, sourceUrl)
 	values ("Lightly-serifed Lowercase",14,"A lowercase alphabet with light serifs.","Ravelry - alfa knits","https://www.ravelry.com/patterns/library/alphabet--signs");
 
-select * from Letter where fontId = 7;
+-- select * from Letter where fontId = 7;
 
-use KnittingChart;
-delete from Chart;
+-- use KnittingChart;
+-- delete from Chart;
 select * from Font;
 
 -- INSERT INTO chart (kerning, spacing, text, fontId, username) VALUES (2, 2, "cheese",6, "beef");
