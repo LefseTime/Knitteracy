@@ -29,7 +29,7 @@ function constructChart(result, grid, r, environment){
             let spacingWidth;
 
             if (parseInt(result.kerning) != 0){
-                kerningWidth = result.kerning;
+                kerningWidth = parseInt(result.kerning);
             }
             else if ($(`#kerning`).val() != ''){
                 kerningWidth = parseInt($(`#kerning`).val());
@@ -38,7 +38,7 @@ function constructChart(result, grid, r, environment){
             }
 
             if (parseInt(result.spacing) != 0){
-                spacingWidth = result.spacing;
+                spacingWidth = parseInt(result.spacing);
             }
             else if ($(`#spacing`).val() != ''){
                 spacingWidth = parseInt($(`#spacing`).val());
@@ -108,7 +108,7 @@ function constructChart(result, grid, r, environment){
                 
             }
 
-            wordHtml += `<div class='chart-info'>Height: ${height}<br>Width: ${totalWidth}<br>Kerning: ${kerningWidth}<br>Spacing: ${spacingWidth}<br><br>Source: <a href='${sourceUrl}' target='_blank'>${sourceName}</a>
+            wordHtml += `<div class='chart-info'>Height: ${parseInt(height)}<br>Width: ${parseInt(totalWidth)}<br>Kerning: ${parseInt(kerningWidth)}<br>Spacing: ${parseInt(spacingWidth)}<br><br>Source: <a href='${sourceUrl}' target='_blank'>${sourceName}</a>
             <br><br>`;
 
             if (environment === "home"){

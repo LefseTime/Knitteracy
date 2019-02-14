@@ -360,7 +360,7 @@ insert into Letter (`character`, width, fontId, coordinates)
         ]}');
         
 insert into Letter (`character`, width, fontId, coordinates)
-	values ('r',4,6,
+	values ('t',4,6,
     '{"coordinates" : [
 		[0,0,0,0],
         [0,0,0,0],
