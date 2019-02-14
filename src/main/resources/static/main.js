@@ -34,7 +34,7 @@ function constructChart(result, grid, r, environment){
             else if ($(`#kerning`).val() != ''){
                 kerningWidth = parseInt($(`#kerning`).val());
             } else {
-                kerningWidth = 0;
+                kerningWidth = parseInt(0);
             }
 
             if (parseInt(result.spacing) != 0){
@@ -43,7 +43,7 @@ function constructChart(result, grid, r, environment){
             else if ($(`#spacing`).val() != ''){
                 spacingWidth = parseInt($(`#spacing`).val());
             } else {
-                spacingWidth = kerningWidth;
+                spacingWidth = parseInt(kerningWidth);
             }
             
             let wordHtml = '';
@@ -56,7 +56,7 @@ function constructChart(result, grid, r, environment){
 
                 //spacing
                 if (letter === null){
-                    totalWidth += spacingWidth;
+                    totalWidth += parseInt(spacingWidth);
 
                     for (let l = height; l > 0; l--){
                         rowHtml = '';
@@ -70,7 +70,7 @@ function constructChart(result, grid, r, environment){
                     
                     
                 } else {
-                    totalWidth += letter.width;
+                    totalWidth += parseInt(letter.width);
                     let coordinates = letter.coordinates;
                     for (let j = coordinates.length; j > 0; j--) {
                         let row = coordinates[j - 1];
@@ -93,7 +93,7 @@ function constructChart(result, grid, r, environment){
                 //kerning
                 if (i < letterArr.length - 1){
                     letterHtml = '';
-                    totalWidth += kerningWidth;
+                    totalWidth += parseInt(kerningWidth);
                     for (let j = height; j > 0; j--) {
                         rowHtml = '';
                         for (let k = 0; k < kerningWidth; k++) {
