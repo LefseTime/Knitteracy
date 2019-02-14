@@ -8,17 +8,14 @@ function loadSavedCharts() {
         type: 'POST',
         url: '/api/user/' + username,
         success: function (result) {
-            console.log(result);
             $('#magnify-buttons').removeClass('hide');
             savedCharts = result.savedCharts;
             for (let r = 0; r < savedCharts.length; r++) {
                 let chart = savedCharts[r];
-                console.log(chart)
                 constructChart(chart, grid, r, "user");
             }
         },
         error: function () {
-            console.log(error)
             alert('FAILURE!');
         }
     });
@@ -31,7 +28,6 @@ $('#word').on("click", ".delete-button", deleteChart);
 function deleteChart(){
     let index = $(this).data("value");
     let chartId = savedCharts[index].chartId;
-    console.log(chartId);
     $.ajax({
         type: 'POST',
         url: '/api/deleteChart/' + chartId,

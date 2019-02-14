@@ -16,7 +16,6 @@ $('#submit-text').click(function () {
             }   
         },
         error: function () {
-            console.log(error)
             alert('FAILURE!');
         }
     });
@@ -34,7 +33,6 @@ function saveChart(){
     let fontId = chart.font.fontId.toString();
     let username = $('#username-value').val();
     let data = {"kerningStr": kerning, "spacingStr": spacing, "text": wordStr, "fontIdStr": fontId, "username": username};
-    console.log(data);
     $.ajax({
         type: 'POST',
         url: '/api/saveChart',
@@ -43,12 +41,9 @@ function saveChart(){
         success: function (result) {
             $('#success-modal').modal('show');
             setTimeout(function(){ $('#success-modal').modal('hide'); }, 1500);
-            console.log('success')
-            console.log(result);
         },
         error: function () {
             location.href="/login";
-            //alert('FAILURE!');
         }
     });
 

@@ -28,19 +28,19 @@ function constructChart(result, grid, r, environment){
             let kerningWidth;
             let spacingWidth;
 
-            if (parseInt(result.kerning) != 0){
+            if (environment === "user"){
                 kerningWidth = parseInt(result.kerning);
             }
-            else if ($(`#kerning`).val() != ''){
+            else if (environment === "home"){
                 kerningWidth = parseInt($(`#kerning`).val());
             } else {
                 kerningWidth = parseInt(0);
             }
 
-            if (parseInt(result.spacing) != 0){
+            if (environment === "user"){
                 spacingWidth = parseInt(result.spacing);
             }
-            else if ($(`#spacing`).val() != ''){
+            else if (environment === "home"){
                 spacingWidth = parseInt($(`#spacing`).val());
             } else {
                 spacingWidth = parseInt(kerningWidth);

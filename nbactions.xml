@@ -27,6 +27,9 @@
             <properties>
                 <exec.args>-classpath %classpath com.knitteracy.KnitteracyApplication</exec.args>
                 <exec.executable>java</exec.executable>
+                <Env.SPRING_DATASOURCE_URL>mysql://rzq61gheva6vnwfz:udizokso6xrkdc6v@pwcspfbyl73eccbn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/yw4ml2tgjch6nqh0</Env.SPRING_DATASOURCE_URL>
+                <Env.SPRING_DATASOURCE_USERNAME>rzq61gheva6vnwfz</Env.SPRING_DATASOURCE_USERNAME>
+                <Env.SPRING_DATASOURCE_PASSWORD>udizokso6xrkdc6v</Env.SPRING_DATASOURCE_PASSWORD>
             </properties>
         </action>
     </actions>
