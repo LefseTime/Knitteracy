@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Knitteracy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/png" href="/logo1.png" th:href="@{/logo1.png}" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/home.css" th:href="@{/home.css}" />
+</head>
+
+<body>
+    <div class="modal fade" id="success-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document" id='modal-dialog'>
+            <div class="modal-content" id='modal-content'>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="save-modal-text">Saved.</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="generator">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle dropdown-toggle-split" type="button" id="logo" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <img id="logo-img" th:src="@{/logo1.png}">
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="/">Chart Generator</a>
+                <a class="dropdown-item" href="/user">Saved Charts</a>
+                <a class="dropdown-item" href="/signup">Sign Up</a>
+                <a class="dropdown-item" href="/login">Log In</a>
+                <a class="dropdown-item" href="/logout">Log Out</a>
+            </div>
+        </div>
+        <form>
+            <label for='text-input'>Text:</label>
+            <input type='text' id="text-input">
+            <label for='kerning'>Kerning:</label>
+            <input type='number' min='0' id='kerning' value='1'>
+            <label for='spacing'>Spacing:</label>
+            <input type='number' min='0' id='spacing' value='2'>
+            <button type='button' id='submit-text'>Generate</button>
+            <input type="hidden" th:value="${user.username}" name="username-value" id="username-value">
+        </form>
+        <div id='magnify-buttons' class='hide'>
+            <button type='button' id='magnify'>+</button>
+            <button type='button' id='minify'>-</button>
+        </div>
+    </div>
+    <div class="words">
+        <div id="word">
+            <div id="welcome-text">
+                <h1>Welcome to the Knitteracy Chart Generator!</h1>
+                <p>Enter text and click 'Generate' to start charting.</p>
+                <p>Change kerning to adjust space between letters, or spacing for space between words.</p>
+                <p>Use the + and - buttons to adjust cell height.</p>
+                <p>Special characters, such as numbers or punctuation, that are not available in a given alphabet are
+                    represented by empty spaces.</p>
+                <h2>Happy crafting!</h2>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script src="/main.js" th:src="@{/main.js}"></script>
+    <script src="/home.js" th:src="@{/home.js}"></script>
+</body>
+
+</html>
