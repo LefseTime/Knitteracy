@@ -41,13 +41,21 @@
                 <a class="dropdown-item" href="/logout">Log Out</a>
             </div>
         </div>
-        <form>
-            <label for='text-input'>Text:</label>
-            <input type='text' id="text-input">
-            <label for='kerning'>Kerning:</label>
-            <input type='number' min='0' id='kerning' value='1'>
-            <label for='spacing'>Spacing:</label>
-            <input type='number' min='0' id='spacing' value='2'>
+        <form id='form'>
+            <div id='text-input-div'>
+                <label for='text-input'>Text:</label>
+                <input type='text' id="text-input">
+            </div>
+            <div id='kerning-spacing-div'>
+                <div id='kerning-div'>
+                    <label for='kerning'>Kerning:</label>
+                    <input type='number' min='0' id='kerning' value='1'>
+                </div>
+                <div id='spacing-div'>
+                    <label for='spacing'>Spacing:</label>
+                    <input type='number' min='0' id='spacing' value='2'>
+                </div>
+            </div>
             <button type='button' id='submit-text'>Generate</button>
             <input type="hidden" th:value="${user.username}" name="username-value" id="username-value">
         </form>
