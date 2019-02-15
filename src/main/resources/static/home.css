@@ -51,6 +51,8 @@ a:hover {
 
 #text-input-div, #kerning-spacing-div {
     padding: .2em 0;
+    display: flex;
+    justify-content: space-around;
 }
 
 #login-signup-logo {
