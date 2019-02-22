@@ -221,27 +221,27 @@ tr {
     margin: 0;
 }
 
-.xs tr {
+.xs td {
     height: .5em;
     width: .5em;
 }
 
-.s tr {
+.s td {
     height: 1em;
     width: 1em;
 }
 
-.m tr {
+.m td {
     height: 1.5em;
     width: 1.5em;
 }
 
-.l tr {
+.l td {
     height: 2em;
-    height; 2em;
+    height: 2em;
 }
 
-.xl tr {
+.xl td {
     height: 2.5em;
     width: 2.5em;
 }
