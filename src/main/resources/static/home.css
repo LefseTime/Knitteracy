@@ -223,26 +223,31 @@ tr {
 
 .xs tr {
     height: .5em;
+    width: .5em;
 }
 
 .s tr {
     height: 1em;
+    width: 1em;
 }
 
 .m tr {
     height: 1.5em;
+    width: 1.5em;
 }
 
 .l tr {
     height: 2em;
+    height; 2em;
 }
 
 .xl tr {
     height: 2.5em;
+    width: 2.5em;
 }
 
 td {
-    width: 2em;
+    /* width: 2em; */
     border: solid thin #5E747F;
     margin: 0;
 }
