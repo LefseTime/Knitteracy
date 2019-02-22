@@ -171,8 +171,7 @@ table {
 .words {
     display: flex;
     flex-flow: row wrap;
-    align-content: center;
-    /* width: 100%; */
+    width: 100%;
     height: 6em;
     margin-top: 6em;
 }
@@ -192,8 +191,7 @@ table {
 #word {
     display: flex;
     flex-flow: row wrap;
-    align-content: center;
-    /* width: 100%; */
+    width: 100%;
 }
   
 
