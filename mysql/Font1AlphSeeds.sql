@@ -38,7 +38,7 @@ insert into Letter (`character`, width, fontId, coordinates)
         [1,0,0,1],
         [1,0,0,1],
         [1,1,1,0]]}');
-   
+
 insert into Letter (`character`, width, fontId, coordinates)
 	values ('E',4,1,
     '{"coordinates" : [[1,1,1,1],

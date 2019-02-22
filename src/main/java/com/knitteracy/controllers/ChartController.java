@@ -11,6 +11,7 @@ import com.knitteracy.service.Charts;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
+import java.security.Principal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -54,16 +55,30 @@ public class ChartController {
         return words;
     }
     
+    // @PostMapping("/api/saveChart")
+    // public ResponseEntity<String> saveChart(String kerningStr, String spacingStr, String text, String fontIdStr, String username){
+    //     int kerning = Integer.parseInt(kerningStr);
+    //     int spacing = Integer.parseInt(spacingStr);
+    //     int fontId = Integer.parseInt(fontIdStr);
+        
+    //     if (username.equals("")){
+    //         return new ResponseEntity<String>("Unauthorized User", HttpStatus.FORBIDDEN);
+    //     } else {
+    //         charts.saveChart(kerning, spacing, text, fontId, username);
+    //         return new ResponseEntity<String>("Saved", HttpStatus.CREATED);
+    //     }  
+    // } 
+
     @PostMapping("/api/saveChart")
-    public ResponseEntity<String> saveChart(String kerningStr, String spacingStr, String text, String fontIdStr, String username){
+    public ResponseEntity<String> saveChart(String kerningStr, String spacingStr, String text, String fontIdStr, Principal principal){
         int kerning = Integer.parseInt(kerningStr);
         int spacing = Integer.parseInt(spacingStr);
         int fontId = Integer.parseInt(fontIdStr);
         
-        if (username.equals("")){
+        if (principal == null){
             return new ResponseEntity<String>("Unauthorized User", HttpStatus.FORBIDDEN);
         } else {
-            charts.saveChart(kerning, spacing, text, fontId, username);
+            charts.saveChart(kerning, spacing, text, fontId, principal.getName());
             return new ResponseEntity<String>("Saved", HttpStatus.CREATED);
         }  
     } 
