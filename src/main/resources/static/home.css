@@ -52,7 +52,12 @@ a:hover {
 #text-input-div, #kerning-spacing-div {
     padding: .2em 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+
+#kerning-div, #spacing-div {
+    display: flex;
+    justify-content: space-between;
 }
 
 #login-signup-logo {
@@ -173,7 +178,13 @@ table {
 
 @media (max-width:768px) { 
     .words {
-        margin-top: 12em;
+        margin-top: 10em;
+    }
+    #generator {
+        font-size: .7em;
+    }
+    #saved-charts-title {
+        font-size: 1em;
     }
   }
 
