@@ -38,7 +38,7 @@ public class FontDaoDB implements FontDao{
     @Override
     public List<Font> getAllFonts(){
         try {
-            final String SELECT_ALL = "SELECT * FROM Font;";
+            final String SELECT_ALL = "SELECT * FROM Font ORDER BY height ASC;";
             return jdbc.query(SELECT_ALL, new FontDaoDB.FontMapper());
         } catch (DataAccessException ex) {
             System.out.println(ex);
