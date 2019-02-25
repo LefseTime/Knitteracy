@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Knitteracy</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="shortcut icon" type="image/png" href="/logo1.png" th:href="@{/logo1.png}" />
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="../static/home.css" th:href="@{/home.css}" />
@@ -29,8 +29,8 @@
     </div>
     <div id="generator">
         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle dropdown-toggle-split" type="button" id="logo" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-secondary dropdown-toggle dropdown-toggle-split" type="button" id="logo"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img id="logo-img" th:src="@{/logo1.png}">
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -47,17 +47,17 @@
                 <input type='text' id="text-input">
             </div>
             <div id='kerning-spacing-div'>
-                <div id='kerning-div'>
-                    <label for='kerning'>Kerning:</label>
-                    <input type='number' min='0' id='kerning' value='1'>
-                </div>
-                <div id='spacing-div'>
-                    <label for='spacing'>Spacing:</label>
-                    <input type='number' min='0' id='spacing' value='2'>
-                </div>
+
+                <label for='kerning'>Kerning:</label>
+                <input type='number' min='0' id='kerning' value='1'>
+
+                <label for='spacing'>Spacing:</label>
+                <input type='number' min='0' id='spacing' value='2'>
+
+                <button type='button' id='submit-text'>Generate</button>
+                <input type="hidden" th:value="${user.username}" name="username-value" id="username-value">
+
             </div>
-            <button type='button' id='submit-text'>Generate</button>
-            <input type="hidden" th:value="${user.username}" name="username-value" id="username-value">
         </form>
         <div id='magnify-buttons' class='hide'>
             <button type='button' id='magnify'>+</button>
@@ -82,11 +82,13 @@
 
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
     <script src="/main.js" th:src="@{/main.js}"></script>
     <script src="/home.js" th:src="@{/home.js}"></script>

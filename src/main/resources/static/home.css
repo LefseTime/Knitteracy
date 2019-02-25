@@ -36,28 +36,30 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    align-content: center;
 }
 
 #form {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
 }
 
 #kerning-spacing-div {
     display: flex;
     flex-flow: row;
+    align-content: center;
+    align-items: center;
 }
 
 #text-input-div, #kerning-spacing-div {
     padding: .2em 0;
     display: flex;
     justify-content: space-between;
-}
-
-#kerning-div, #spacing-div {
-    display: flex;
-    justify-content: space-between;
+    align-content: center;
+    align-items: center;
 }
 
 #login-signup-logo {
@@ -113,6 +115,11 @@ button:hover {
     transition: .1s;
 }
 
+label {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
 input {
     border-radius: 20em;
     padding: .5em;
@@ -137,10 +144,6 @@ input {
     background-color: #34344A;
     border: none;
     font-size: 2em;
-}
-
-#submit-text {
-    margin-top: .4em;
 }
 
 #modal-content {
