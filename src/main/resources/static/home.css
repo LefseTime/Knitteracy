@@ -179,6 +179,12 @@ table {
     margin-top: 6em;
 }
 
+#about-body {
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
 @media (max-width:768px) { 
     .words {
         margin-top: 10em;

@@ -46,6 +46,11 @@ public class ViewController {
         model.addAttribute("user", user);
         return "home";
     }
+    
+    @GetMapping("/about")
+    public String viewAbout() {
+        return "about";
+    }
 
     @GetMapping("/login")
     public String viewLogin() {
